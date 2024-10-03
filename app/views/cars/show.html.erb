@@ -32,10 +32,10 @@
 
 <!-- Form to add car to Favourites -->
 <h3>Favourite this Car:</h3>
-<%# <% if @car.favourite.empty? %> %>
+<% if @car.favourites.empty? %>
   <%= simple_form_for [@car, @favourite] do |f| %>
     <%= f.submit "Save to my Garage" %>
   <% end %>
-<%# <% else %>
+<% else %>
   <p>This car is already in your garage!</p>
-<%# <% end %> %> %>
+<% end %>
