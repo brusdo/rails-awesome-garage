@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :cars, only: [:index, :show]
+  resources :cars, only: [:index, :show] do
+    resources :reviews, only: [:create]
+  end
 
   # Root path for the cars list:
   root to: 'cars#index'
