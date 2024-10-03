@@ -1,0 +1,16 @@
+<h1><%= @car.brand %> </h1>
+
+<p>Year: <%= @car.year %></p>
+<p>Fuel Type: <%= @car.fuel %></p>
+<p>Owner: <%= @car.owner.nickname %></p>
+
+<h3>Reviews</h3>
+<ul>
+  <% @car.reviews.each do |review| %>
+    <li>
+      Rating: <%= review.rating %> - <%= review.comment %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to all cars', cars_path %>
