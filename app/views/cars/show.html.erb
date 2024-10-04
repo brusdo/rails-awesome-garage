@@ -13,9 +13,10 @@
   <% end %>
 </ul>
 
-<%= link_to 'Back to all cars', cars_path %>
+
 
 <!-- Form for Reviews -->
+<div>
 <h3>Please Leave your Review:</h3>
 <%= simple_form_for([@car, @review]) do |f| %>
 <div class="form-group">
@@ -29,7 +30,9 @@
   <p><%= review.comment %></p>
   <p><%= '⭐️' * review.rating %></p>
 <% end %>
+</div>
 
+<div>
 <!-- Form to add car to Favourites -->
 <h3>Favourite this Car:</h3>
 <% if @car.favourites.empty? %>
@@ -39,3 +42,6 @@
 <% else %>
   <p>This car is already in your garage!</p>
 <% end %>
+</div>
+
+<%= link_to 'Back to all cars', cars_path %>
