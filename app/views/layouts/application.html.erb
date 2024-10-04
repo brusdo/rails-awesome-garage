@@ -10,8 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
+<%# Added a condition here to not see the navbar in the home page %>
   <body>
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == 'pages' %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
